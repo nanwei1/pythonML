@@ -32,7 +32,7 @@ encoded_vector = encoder.transform([[2,3,5,3]]).toarray()
 print(data1)
 print("\nEncoded vector =", encoded_vector)
 
-# label encoding
+# label encoding/decoding
 label_encoder = preprocessing.LabelEncoder()
 input_classes = ['Audi', 'Ford', 'Audi', 'Toyota', 'Ford', 'BMW']
 label_encoder.fit(input_classes)
@@ -43,3 +43,7 @@ labels=['Toyota','Ford','Audi']
 encoded_labels = label_encoder.transform(labels)
 print("\nLabels = ", labels)
 print("Encoded labels = ", list(encoded_labels))
+encoded_labels = [2,1,0,3,1]
+decoded_labels = label_encoder.inverse_transform(encoded_labels)
+print("\nEncoded labels = ", encoded_labels)
+print("Decoded labels = ", list(decoded_labels))
